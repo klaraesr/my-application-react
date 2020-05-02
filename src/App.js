@@ -27,11 +27,9 @@ function App() {
       <button
         className="btn btn-default"
         style={style}
-        onClick={handleClick}>{"HEJ"}</button>
+        onClick={handleClick}>{"Click me!"}</button>
     </div>
   );
 }
-
-
 
 export default App;
