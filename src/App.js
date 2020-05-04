@@ -30,16 +30,16 @@ function App() {
 
     // add keydown event listener
     document.addEventListener('keydown', function(e) {
-      console.log("keydown" + e.keyCode)
       // get the value of the key code from the key map
       let key = allowedKeys[e.keyCode];
-      console.log("key " + key)
       // get the value of the required key from the konami code
       let requiredKey = code[codePosition];
 
       // compare the key with the required key
       if (key === requiredKey) {
-        console.log("correct")
+        let pass = "*".repeat(codePosition + 1)
+        console.clear()
+        console.log(pass)
         // move to the next key in the konami code sequence
         codePosition++;
         // if the last key is reached, activate egg
@@ -49,6 +49,7 @@ function App() {
         }
       } else {
         codePosition = 0
+        console.clear()
       }
     })
   }
@@ -76,6 +77,9 @@ function App() {
       <header className="App-header">
         <p>
           Successfully deployed with Google App Engine!
+        </p>
+        <p className="Hint">
+          Would you like to know more? Try typing the correct keyword...
         </p>
       </header>
     </div>
